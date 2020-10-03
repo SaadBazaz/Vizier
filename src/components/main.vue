@@ -40,7 +40,7 @@
         </v-list-item-avatar>
 
         <v-list-item-content>
-          <v-list-item-title>John Leider</v-list-item-title>
+          <v-list-item-title>Saad Bazaz</v-list-item-title>
         </v-list-item-content>
       </v-list-item>
 
@@ -95,6 +95,10 @@ body {
   padding: 40px;
   opacity: 0.45;
   cursor: pointer;
+}
+
+.app-header .material-icons:active {
+  opacity: 0.2;
 }
 
 .app-header .title {
@@ -158,5 +162,22 @@ body {
 
 .inactive {
   opacity: 0.25;
+}
+
+
+@media screen and (max-width: 480px) {
+
+.app-header .material-icons {
+  font-size: 35px;
+  padding: 30px;
+  transition: 0.2s;
+}
+
+.app-header .title {
+  font-size: 20px;
+  padding: 25px;
+  transition: 0.2s;
+}
+
 }
 </style>
