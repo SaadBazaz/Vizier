@@ -1,27 +1,28 @@
 <template>
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <HelloWorld msg="Welcome to Your Vue.js App" />
 </template>
 
 <script>
-import HelloWorld from './components/main.vue'
+import HelloWorld from "./components/main.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    HelloWorld,
+  },
+};
 </script>
 
 <style>
- * {
-       margin: 0;
-	padding:0;
-   }
-
-html{
-	height:100%;
+* {
+  margin: 0;
+  padding: 0;
 }
-#app {margin-top: -0px !important;
+
+html {
+  height: 100%;
+}
+#app {
+  margin-top: -0px !important;
 }
 </style>
