@@ -76,7 +76,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style>
 body {
   background-color: #f2f2f2;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
