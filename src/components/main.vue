@@ -67,6 +67,11 @@ export default {
   data() {
     return {
       drawer: null,
+      items: [
+          { title: 'Device 1', icon: 'mdi-checkbox-blank-circle' },
+          { title: 'Device 2', icon: 'mdi-checkbox-blank-circle' },
+          { title: 'Device 3', icon: '' }
+      ]
     };
   },
   props: {
