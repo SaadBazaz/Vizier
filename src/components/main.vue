@@ -12,9 +12,15 @@
     </head>
 
     <div class="app-header">
-      <i class="material-icons" @click.stop="drawer = !drawer">menu</i>
+      <v-btn icon @click.stop="drawer = !drawer">
+        <i class="material-icons">menu</i>
+      </v-btn>
+
       <div class="title">DEVICE 1</div>
-      <i class="material-icons">settings</i>
+
+      <v-btn icon>
+        <i class="material-icons">settings</i>
+      </v-btn>
     </div>
 
     <div class="app-body">
@@ -68,10 +74,10 @@ export default {
     return {
       drawer: null,
       items: [
-          { title: 'Device 1', icon: 'mdi-checkbox-blank-circle' },
-          { title: 'Device 2', icon: 'mdi-checkbox-blank-circle' },
-          { title: 'Device 3', icon: '' }
-      ]
+        { title: "Device 1", icon: "mdi-checkbox-blank-circle" },
+        { title: "Device 2", icon: "mdi-checkbox-blank-circle" },
+        { title: "Device 3", icon: "" },
+      ],
     };
   },
   props: {
@@ -93,14 +99,22 @@ body {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  padding: 0 40px;
 }
 
 .app-header .material-icons {
   font-size: 50px;
-  padding: 40px;
+/*  padding: 40px; */
   opacity: 0.45;
   cursor: pointer;
 }
+
+.app-header .v-btn {
+    font-size: 35px;
+    padding: 30px;
+    transition: 0.2s;
+}
+
 
 .app-header .material-icons:active {
   opacity: 0.2;
@@ -171,18 +185,18 @@ body {
 
 
 @media screen and (max-width: 480px) {
+  .app-header .material-icons {
+    font-size: 35px;
+/*    padding: 30px;*/
+    transition: 0.2s;
+  }
 
-.app-header .material-icons {
-  font-size: 35px;
-  padding: 30px;
-  transition: 0.2s;
-}
 
-.app-header .title {
-  font-size: 20px;
-  padding: 25px;
-  transition: 0.2s;
-}
 
+  .app-header .title {
+    font-size: 20px;
+    padding: 25px;
+    transition: 0.2s;
+  }
 }
 </style>
