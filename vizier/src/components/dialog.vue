@@ -1,5 +1,4 @@
 <template>
-<v-app>
     <v-dialog
       hide-overlay
       v-model="show"
@@ -29,7 +28,7 @@
         </v-card-actions>
       </v-card>
     </v-dialog>
-</v-app>
+
 </template>
 
 

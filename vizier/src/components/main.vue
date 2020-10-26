@@ -1,16 +1,19 @@
+<head>
+  <!-- Index Stylesheet -->
+  <link rel="stylesheet" href="index.css" />
+
+  <!-- Material Icons -->
+  <link
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet"
+  />
+</head>
+
+
 <template>
-  <body>
-    <head>
-      <!-- Index Stylesheet -->
-      <link rel="stylesheet" href="index.css" />
+<v-app :style="{background: $vuetify.theme.themes.light.background}">
 
-      <!-- Material Icons -->
-      <link
-        href="https://fonts.googleapis.com/icon?family=Material+Icons"
-        rel="stylesheet"
-      />
-    </head>
-
+    <v-layout column wrap>
     <div class="app-header">
       <v-btn icon @click.stop="drawer = !drawer">
         <i class="material-icons">menu</i>
@@ -66,8 +69,8 @@
     </v-navigation-drawer>
 
     <SettingsDialog v-model="dialog" />
-
-  </body>
+    </v-layout>
+  </v-app>
 </template>
 
 <script>
@@ -98,9 +101,30 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
+
+html { overflow-y: auto }
+
 body {
   background-color: #f2f2f2;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+
+.v-application {
+   font-family: $body-font-family, "Segoe UI", sans-serif !important;
+
+ }
+
+.v-application--wrap {
+/*    flex: 1 1 auto;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    max-width: 100%;
+    position: relative;*/
 }
 
 .app-header {
