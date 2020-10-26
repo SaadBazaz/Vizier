@@ -18,7 +18,7 @@
 
       <div class="title">DEVICE 1</div>
 
-      <v-btn icon>
+      <v-btn icon @click.stop = "dialog = true">
         <i class="material-icons">settings</i>
       </v-btn>
     </div>
@@ -64,14 +64,21 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
+
+    <SettingsDialog v-model="dialog" />
+
   </body>
 </template>
 
 <script>
+
+import SettingsDialog from "./dialog.vue"
+
 export default {
   name: "HelloWorld",
   data() {
     return {
+      dialog: false,
       drawer: null,
       items: [
         { title: "Device 1", icon: "mdi-checkbox-blank-circle" },
@@ -79,6 +86,9 @@ export default {
         { title: "Device 3", icon: "" },
       ],
     };
+  },
+  components: {
+    SettingsDialog
   },
   props: {
     msg: String,
