@@ -111,7 +111,7 @@ body {
 
 .app-header .v-btn {
     font-size: 35px;
-    padding: 30px;
+    padding: 10px;
     transition: 0.2s;
 }
 
