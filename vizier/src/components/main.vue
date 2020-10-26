@@ -42,47 +42,24 @@
       </div>
     </div>
 
-    <v-navigation-drawer v-model="drawer" absolute temporary>
-      <v-list-item>
-        <v-list-item-avatar>
-          <v-img src="https://randomuser.me/api/portraits/men/78.jpg"></v-img>
-        </v-list-item-avatar>
-
-        <v-list-item-content>
-          <v-list-item-title>Saad Bazaz</v-list-item-title>
-        </v-list-item-content>
-      </v-list-item>
-
-      <v-divider></v-divider>
-
-      <v-list dense>
-        <v-list-item v-for="item in items" :key="item.title" link>
-          <v-list-item-icon>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-item-icon>
-
-          <v-list-item-content>
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
-
     <SettingsDialog v-model="dialog" />
+    <MainAppDrawer v-model="drawer" />
+
     </v-layout>
   </v-app>
 </template>
 
 <script>
 
-import SettingsDialog from "./dialog.vue"
+import SettingsDialog from "./SettingsDialog.vue"
+import MainAppDrawer from "./MainAppDrawer.vue"
 
 export default {
   name: "HelloWorld",
   data() {
     return {
       dialog: false,
-      drawer: null,
+      drawer: false,
       items: [
         { title: "Device 1", icon: "mdi-checkbox-blank-circle" },
         { title: "Device 2", icon: "mdi-checkbox-blank-circle" },
@@ -91,7 +68,8 @@ export default {
     };
   },
   components: {
-    SettingsDialog
+    SettingsDialog,
+    MainAppDrawer
   },
   props: {
     msg: String,
@@ -112,20 +90,10 @@ body {
 
 
 .v-application {
-   font-family: $body-font-family, "Segoe UI", sans-serif !important;
+   /* font-family: $body-font-family, "Segoe UI", sans-serif !important; */
 
  }
 
-.v-application--wrap {
-/*    flex: 1 1 auto;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    max-width: 100%;
-    position: relative;*/
-}
 
 .app-header {
   display: flex;
@@ -133,22 +101,19 @@ body {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 0 40px;
+  padding: 0 55px;
 }
 
 .app-header .material-icons {
   font-size: 50px;
-/*  padding: 40px; */
+  margin: 10px;
   opacity: 0.45;
   cursor: pointer;
 }
 
 .app-header .v-btn {
-    font-size: 35px;
-    padding: 10px;
-    transition: 0.2s;
+  height:60px;
 }
-
 
 .app-header .material-icons:active {
   opacity: 0.2;

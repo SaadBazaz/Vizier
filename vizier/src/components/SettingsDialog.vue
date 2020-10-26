@@ -73,6 +73,14 @@ export default {
   letter-spacing: 2px;
 }
 
+@media screen and (max-width: 480px) {
+
+.v-list{
+    padding:30px 0px;
+}
+
+}
+
 </style>
 
 
