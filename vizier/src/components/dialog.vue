@@ -2,31 +2,21 @@
     <v-dialog
       hide-overlay
       v-model="show"
-      width="500"
+      width="400"
+      content-class="round"
     >
 
-      <v-card>
-        <v-card-title class="headline grey lighten-2">
-          Privacy Policy
-        </v-card-title>
+        <v-list>
+        <v-list-item v-for="item in items" :key="item.title" link>
+ 
 
-        <v-card-text>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </v-card-text>
+          <!-- <v-list-item-content> -->
+            <v-list-item-title>{{ item.title }}</v-list-item-title>
+          <!-- </v-list-item-content> -->
+        </v-list-item>
+      </v-list>
 
-        <v-divider></v-divider>
 
-        <v-card-actions>
-          <v-spacer></v-spacer>
-          <v-btn
-            color="primary"
-            text
-            @click="show = false"
-          >
-            I accept
-          </v-btn>
-        </v-card-actions>
-      </v-card>
     </v-dialog>
 
 </template>
@@ -47,10 +37,43 @@ export default {
          this.$emit('input', value)
       }
     }
-  }
+  },
+  data() {
+    return {
+      items: [
+        { title: "CHANGE DETAILS", icon: "mdi-checkbox-blank-circle" },
+        { title: "PROMPT SIGN IN", icon: "mdi-checkbox-blank-circle" },
+        { title: "TURN ON/OFF DEVICE", icon: "" },
+        { title: "DELETE DEVICE ENTRY", icon: "" },
+      ],
+    };
+  },
 }
 </script>
 
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+
+.round {
+  border-radius: 30px;
+  overflow-y: hidden;
+}
+
+.v-list{
+    padding:50px 0px;
+}
+
+.v-list-item {
+    text-align: center;
+    margin:10px;
+    padding:25px 10px;
+}
+
+.v-list-item-title{
+  letter-spacing: 2px;
+}
+
+</style>
 
 
 
