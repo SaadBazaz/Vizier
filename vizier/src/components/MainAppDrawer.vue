@@ -26,13 +26,26 @@
             <v-list-item-title>{{ item.title }}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
+
+
+        <v-list-item class="list-item-action" link>
+          <v-list-item-content>
+            <v-list-item-title>+ ADD DEVICE</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+
+
       </v-list>
     </div>
+            <AddDeviceDialog v-model="dialog" />
+
     </v-navigation-drawer>
+
 </template>
 
 
 <script>
+import AddDeviceDialog from "./AddDeviceDialog.vue";
 
 export default {
   name: "MainAppDrawer",
@@ -51,6 +64,7 @@ export default {
   },
   data() {
     return {
+      dialog:false,
       items: [
         { title: "Device 1", icon: "mdi-checkbox-blank-circle" },
         { title: "Device 2", icon: "mdi-checkbox-blank-circle" },
@@ -58,6 +72,9 @@ export default {
       ],
     };
   },
+  components: {
+    AddDeviceDialog
+  }
 }
 </script>
 
@@ -97,8 +114,15 @@ export default {
 }
 
 .v-list-item-title{
-  letter-spacing: 2px;
+  /* letter-spacing: 2px; */
   font-size: 40px;
+}
+
+.list-item-action{
+  margin-top: 50px;
+  letter-spacing: 2px;
+  font-size: 30px;
+  opacity:0.5;
 }
 
 @media screen and (max-width: 480px) {

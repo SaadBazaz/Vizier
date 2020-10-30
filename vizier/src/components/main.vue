@@ -29,13 +29,13 @@
     <div class="app-body">
       <div class="device-pins">
         <div class="pin-column">
-          <div class="pin-circle active on" v-on:click="sendCommand()"></div>
-          <div class="pin-circle inactive"></div>
+          <div class="pin-circle active on" v-on:click="sendCommand('P')"></div>
+          <div class="pin-circle inactive" v-on:click="sendCommand('H')"></div>
           <div class="pin-circle inactive"></div>
         </div>
 
         <div class="pin-column">
-          <div class="pin-circle active"></div>
+          <div class="pin-circle active" v-on:click="sendCommand('L')"></div>
           <div class="pin-circle active"></div>
           <div class="pin-circle active"></div>
         </div>
@@ -80,12 +80,15 @@ export default {
 
   // },
   methods: {
-    sendCommand: () => {
+    sendCommand: (route) => {
       // let vm = this;
       // vm.baseUrl = vm.msg;
       // console.log("Base URL is ", vm.baseUrl)
-      axios.get("http://baadal.ddns.net:12345" + "/P/")
-        .then(response => alert("Done!"))
+      axios.get("http://baadal.ddns.net:12345/" + route)
+        .then(response => {
+          if (response.status === 200)
+            alert("Done! " + response.statusText)
+        })
     }
   }
 };

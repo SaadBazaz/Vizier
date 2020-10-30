@@ -11,8 +11,19 @@ axios.interceptors.response.use(
 function(response) { return response;}, 
 function(error) {
     // handle error
-    if (error.response) {
+
+    console.log (error.code)
+    console.log (error.response)
+    console.log (error.status)
+    if (error.code === 'ECONNABORTED') {
+    // Timeout error
+        alert("The device is not responding. Please check its internet connection or reboot it.");
+    }
+    else if (error.response) {
         alert(error.response.data.message);
+    }
+    else if (!error.status){
+        alert("Oops! Seems like you aren't connected to the Internet, or the device is not responding.");
     }
 });
 
