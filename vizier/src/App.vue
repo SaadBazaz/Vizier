@@ -19,7 +19,7 @@ export default {
   mounted () {
     axios
       .get('http://baadal.ddns.net:8088/getBaseURL')
-      .then(response => (this.info = response))
+      .then(response => (this.info = response.data))
   },
 };
 </script>
