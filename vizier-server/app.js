@@ -1,11 +1,13 @@
 const express = require('express')
 const app = express()
+var cors = require('cors')
 const port = 8088
 
 // Make sure you place body-parser before your CRUD handlers!
 //app.use(bodyParser.urlencoded({ extended: true }))
 
 app.use(express.json());
+app.use(cors());
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
