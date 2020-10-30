@@ -19,7 +19,7 @@
         <i class="material-icons">menu</i>
       </v-btn>
 
-      <div class="title">DEVICE 1</div>
+      <div class="title">{{msg}}</div>
 
       <v-btn icon @click.stop = "dialog = true">
         <i class="material-icons">settings</i>

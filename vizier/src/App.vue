@@ -1,14 +1,25 @@
 <template>
-  <HelloWorld msg="Welcome to Your Vue.js App" />
+  <HelloWorld :msg="info" />
 </template>
 
 <script>
 import HelloWorld from "./components/main.vue";
+import axios from 'axios'
 
 export default {
   name: "App",
   components: {
     HelloWorld,
+  },
+  data () {
+    return {
+      info: null
+    }
+  },
+  mounted () {
+    axios
+      .get('http://baadal.ddns.net:8088/getBaseURL')
+      .then(response => (this.info = response))
   },
 };
 </script>

@@ -20,6 +20,10 @@ app.post('/devices', (req, res) => {
   res.send()
 })
 
+app.get('/getBaseURL', (req, res) => {
+  res.send('http://baadal.ddns.net:12345')
+})
+
 app.listen(port, "0.0.0.0", () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })
