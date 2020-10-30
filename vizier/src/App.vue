@@ -6,6 +6,16 @@
 import HelloWorld from "./components/main.vue";
 import axios from 'axios'
 
+
+axios.interceptors.response.use(
+function(response) { return response;}, 
+function(error) {
+    // handle error
+    if (error.response) {
+        alert(error.response.data.message);
+    }
+});
+
 export default {
   name: "App",
   components: {

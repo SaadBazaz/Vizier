@@ -29,7 +29,7 @@
     <div class="app-body">
       <div class="device-pins">
         <div class="pin-column">
-          <div class="pin-circle active on"></div>
+          <div class="pin-circle active on" v-on:click="sendCommand()"></div>
           <div class="pin-circle inactive"></div>
           <div class="pin-circle inactive"></div>
         </div>
@@ -53,11 +53,16 @@
 
 import SettingsDialog from "./SettingsDialog.vue"
 import MainAppDrawer from "./MainAppDrawer.vue"
+import axios from 'axios'
 
 export default {
   name: "HelloWorld",
+  props: {
+    msg: String,
+  },
   data() {
     return {
+      baseUrl: this.msg,
       dialog: false,
       drawer: false,
       items: [
@@ -71,9 +76,18 @@ export default {
     SettingsDialog,
     MainAppDrawer
   },
-  props: {
-    msg: String,
-  },
+  // mounted: {
+
+  // },
+  methods: {
+    sendCommand: () => {
+      // let vm = this;
+      // vm.baseUrl = vm.msg;
+      // console.log("Base URL is ", vm.baseUrl)
+      axios.get("http://baadal.ddns.net:12345" + "/P/")
+        .then(response => this.$emit('login-success', response.data.json))
+    }
+  }
 };
 </script>
 
