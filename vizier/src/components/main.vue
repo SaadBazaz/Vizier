@@ -85,7 +85,7 @@ export default {
       // vm.baseUrl = vm.msg;
       // console.log("Base URL is ", vm.baseUrl)
       axios.get("http://baadal.ddns.net:12345" + "/P/")
-        .then(response => this.$emit('login-success', response.data.json))
+        .then(response => alert("Done!"))
     }
   }
 };
