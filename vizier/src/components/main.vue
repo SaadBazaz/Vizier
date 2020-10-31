@@ -29,13 +29,13 @@
     <div class="app-body">
       <div class="device-pins">
         <div class="pin-column">
-          <div class="pin-circle active on" v-on:click="sendCommand('P')"></div>
-          <div class="pin-circle inactive" v-on:click="sendCommand('H')"></div>
+          <div class="pin-circle active on" v-on:click="sendCommand('P/')"></div>
+          <div class="pin-circle inactive" v-on:click="sendCommand('H/')"></div>
           <div class="pin-circle inactive"></div>
         </div>
 
         <div class="pin-column">
-          <div class="pin-circle active" v-on:click="sendCommand('L')"></div>
+          <div class="pin-circle active" v-on:click="sendCommand('L/')"></div>
           <div class="pin-circle active"></div>
           <div class="pin-circle active"></div>
         </div>
