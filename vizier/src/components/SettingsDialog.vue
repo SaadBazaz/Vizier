@@ -1,7 +1,6 @@
 <template>
     <v-dialog
       hide-overlay
-      v-model="show"
       width="400"
       content-class="round"
     >
@@ -25,19 +24,6 @@
 <script>
 export default {
   name: "SettingsDialog",
-  props: {
-     value: Boolean
-  },
-  computed: {
-    show: {
-      get () {
-        return this.value
-      },
-      set (value) {
-         this.$emit('input', value)
-      }
-    }
-  },
   data() {
     return {
       items: [
@@ -48,6 +34,9 @@ export default {
       ],
     };
   },
+  mounted() {
+    console.log ("Mounted");
+  }
 }
 </script>
 
