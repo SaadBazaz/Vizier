@@ -21,7 +21,7 @@
 
       <div class="title">{{msg}}</div>
 
-      <v-btn icon @click.stop = "dialog = true">
+      <v-btn icon @click.stop = "$router.push('/dialog')">
         <i class="material-icons">settings</i>
       </v-btn>
     </div>
@@ -42,7 +42,6 @@
       </div>
     </div>
 
-    <SettingsDialog v-model="dialog" />
     <MainAppDrawer v-model="drawer" />
 
     </v-layout>
@@ -51,7 +50,7 @@
 
 <script>
 
-import SettingsDialog from "./SettingsDialog.vue"
+// import SettingsDialog from "./SettingsDialog.vue"
 import MainAppDrawer from "./MainAppDrawer.vue"
 import axios from 'axios'
 
@@ -73,7 +72,7 @@ export default {
     };
   },
   components: {
-    SettingsDialog,
+    // SettingsDialog,
     MainAppDrawer
   },
   // mounted: {

@@ -7,15 +7,31 @@ import EmptyRouterView from '../views/EmptyRouterView.vue'
 Vue.use(VueRouter)
 
 const routes = [
+  // {
+  //     // In a real world application the path
+  //     // would be something like `/product/:id`.
+  //     path: '/devices/:id',
+  //     component: Product,
+  //     children: [
+  //       // Here we specify that the `ProductImagePopup`
+  //       // component should be rendered as a nested
+  //       // route of the `Product` component.
+  //       {
+  //         path: '/settings',
+  //         component: ProductImagePopup,
+  //       },
+  //     ],
+
+  // },
   {
     path: '/',
     component: EmptyRouterView,
     children: [{
-      name: 'nested',
+      name: 'home',
       path: '',
       component: Home
     }, {
-      name: 'nested.dialog',
+      name: 'dialog',
       path: 'dialog',
       components: {
           default: Home,
