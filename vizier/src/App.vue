@@ -11,16 +11,19 @@ axios.interceptors.response.use(
 function(response) { return response;}, 
 function(error) {
     // handle error
-
-    console.log (error.code)
-    console.log (error.response)
-    console.log (error.status)
+    console.log ("Error == ", error)
+    console.log ("Error.code == ", error.code)
+    console.log ("Error.response == ", error.response)
+    console.log ("Error.status == ", error.status)
     if (error.code === 'ECONNABORTED') {
     // Timeout error
         alert("The device is not responding. Please check its internet connection or reboot it.");
     }
     else if (error.status === 404){
         alert("This route does not exist on the device. Please edit it and try again.");
+    }
+    else if (error.status === 500){
+        alert("The device is bugging out! Try rebooting it.");
     }
     else if (!error.status) {
         alert("Oops! Seems like you aren't connected to the Internet, or the device is not responding.");

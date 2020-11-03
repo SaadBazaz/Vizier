@@ -4,7 +4,7 @@
     temporary
     hide-overlay>
     <div class="content">
-      <v-list-item class="profile">
+      <v-list-item class="profile-list-item" style="align-items:center;justify-content:center">
         <v-list-item-avatar>
           <v-img src="https://randomuser.me/api/portraits/men/78.jpg"></v-img>
         </v-list-item-avatar>
@@ -66,9 +66,9 @@ export default {
     return {
       dialog:false,
       items: [
-        { title: "Device 1", icon: "mdi-checkbox-blank-circle" },
-        { title: "Device 2", icon: "mdi-checkbox-blank-circle" },
-        { title: "Device 3", icon: "" },
+        { id: "1", title: "Device 1", icon: "mdi-checkbox-blank-circle" },
+        { id: "2", title: "Device 2", icon: "mdi-checkbox-blank-circle" },
+        { id: "3", title: "Device 3", icon: "" },
       ],
     };
   },
@@ -102,12 +102,13 @@ export default {
   overflow-y: hidden;
 }
 
-.v-list{
-    padding:50px 0px;
+.profile-list-item{
+  margin-bottom: 0px;
 }
 
 .v-list-item {
     /* border-radius: 20px; */
+    align-content: center;
     text-align: center;
     margin:35px;
     padding:10px 5px;
