@@ -13,3 +13,6 @@ For that (from root)
 ```cd vizier-server```
 ```node app.js```
 
+### Note
+This app is under construction and I wish to keep it open-source. If you have any suggestions, feel free to drop a comment, Issue or Pull Request! Happy coding :)
+
